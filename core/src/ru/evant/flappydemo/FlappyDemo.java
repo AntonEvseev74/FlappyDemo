@@ -5,14 +5,27 @@ package ru.evant.flappydemo;
  * https://www.youtube.com/watch?v=LEj28chiJvo&list=PLyfVjOYzujuisikez6McGsBtKviTa_lty&index=12
  */
 
+/*
+ * Нужно:
+ * 		- Поменять текстуры
+ * 		- Поменять музыку
+ * 		- Переделать меню
+ * 			- Добавить настройки
+ * 				- on/off Music
+ * 				- on/off Sound
+ * 			- Добавить рекорды
+ * 		- Ввести систему начисления очков
+ * 		- Вставить логотип
+ */
+
 import com.badlogic.gdx.ApplicationAdapter;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.audio.Music;
 import com.badlogic.gdx.graphics.GL20;
-import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 
 import ru.evant.flappydemo.states.GameStateManager;
+import ru.evant.flappydemo.states.LogoState;
 import ru.evant.flappydemo.states.MenuState;
 
 public class FlappyDemo extends ApplicationAdapter {
@@ -33,8 +46,8 @@ public class FlappyDemo extends ApplicationAdapter {
 		music.setVolume(0.1f); // громкость музыки
 		music.play();
 
-		Gdx.gl.glClearColor(1, 0, 0, 1);
-		gsm.push(new MenuState(gsm));
+		Gdx.gl.glClearColor(0, 0, 0.8f, 1);
+		gsm.push(new LogoState(gsm));
 	}
 
 	@Override

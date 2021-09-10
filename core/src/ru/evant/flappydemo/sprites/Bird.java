@@ -17,6 +17,7 @@ public class Bird {
 
     private Texture texture;
     private Animation birdAnimation;
+    private int numFramesBird = 3; // количество кадров в анимации птички - тут файл birdanimation.png- в нем 3 кадра
 
     private Sound flap;
 
@@ -24,7 +25,7 @@ public class Bird {
         position = new Vector3(x, y, 0);
         velosity = new Vector3(0, 0, 0);
         texture = new Texture("birdanimation.png");
-        birdAnimation = new Animation(new TextureRegion(texture), 3, 0.5f); // текстура, кадров анимации, длительность
+        birdAnimation = new Animation(new TextureRegion(texture), numFramesBird, 0.5f); // текстура, кадров анимации, длительность
         bounds = new Rectangle(x, y, texture.getWidth() / 3, texture.getHeight());
 
         flap = Gdx.audio.newSound(Gdx.files.internal("flap.ogg"));
